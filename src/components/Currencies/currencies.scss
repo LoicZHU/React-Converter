@@ -6,16 +6,22 @@
   max-height: 50vh;
   overflow-y: auto;
   
-
+  // title "Currencies"
   &__title {
     font-size: 1.5em;
     font-weight: bold;
     padding: 0.8rem;
   }
 
+  // currencies list
   .currency {
     padding: 0.8rem;
     border-top: 1px solid $alternativeColor;
+    cursor: pointer;
+    transition: $slowTransition;
+
+    &:hover {
+      background-color: $alternativeColor;
+    }
   }
-  
 }
