@@ -1,1 +1,13 @@
+@import 'src/styles/_vars';
 
+.conversion {
+  color: $mainColor;
+  text-align: center;
+  background-color: $lightColor;
+  padding: $gutter;
+
+  &__value {
+    font-size: 2em;
+    font-weight: bold;
+  }
+}

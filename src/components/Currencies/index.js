@@ -1,16 +1,30 @@
 // import npm
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // import
 import './currencies.scss';
+import Currency from './Currency';
 
 // component
-const Currencies = () => (
-  <div>
-    <div>1.09</div>
-    <div>USD</div>
+const Currencies = ({ currenciesList }) => (
+  <div className="currencies">
+    <h2 className="currencies__title">Currencies</h2>
+    <ul>
+      {currenciesList.map((currency) => (
+        <Currency key={currency.name} {...currency} />
+      ))}
+    </ul>
   </div>
 );
+
+// props validation
+Currencies.propTypes = {
+  currenciesList: PropTypes.arrayOf({
+    name: PropTypes.string.isRequired,
+    rate: PropTypes.number.isRequired,
+  }).isRequired,
+};
 
 // export
 export default Currencies;

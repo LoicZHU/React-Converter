@@ -7,7 +7,7 @@ import './converter.scss';
 // component
 const Converter = () => (
   <header className="header">
-    <h1>Converter</h1>
+    <h1 className="header__title">Converter</h1>
     <div>1 euro</div>
   </header>
 );

@@ -6,7 +6,7 @@ import './app.scss';
 import Converter from 'src/components/Converter';
 import Currencies from 'src/components/Currencies';
 import Conversion from 'src/components/Conversion';
-
+import currenciesList from 'src/data/currencies';
 
 // == Composant
 // eslint-disable-next-line react/prefer-stateless-function
@@ -15,7 +15,7 @@ class App extends React.Component {
     return (
       <div className="app">
         <Converter />
-        <Currencies />
+        <Currencies currenciesList={currenciesList} />
         <Conversion />
       </div>
     );

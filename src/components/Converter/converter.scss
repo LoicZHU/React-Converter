@@ -1,1 +1,13 @@
+@import 'src/styles/_vars';
 
+.header {
+  color: $lightColor;
+  text-align: center;
+  background-color: $mainColor;
+  padding: $gutter;
+  
+  &__title {
+    font-size: 2em;
+    font-weight: bold;
+  }
+}

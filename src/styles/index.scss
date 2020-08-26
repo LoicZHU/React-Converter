@@ -1,9 +1,11 @@
 @import 'reset';
 @import 'vars';
 
+
 body {
   font-family: sans-serif;
   background-color: $alternativeColor;
+  min-width: 280px;
 }
 
 /* 

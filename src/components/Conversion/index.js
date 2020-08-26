@@ -6,8 +6,9 @@ import './conversion.scss';
 
 // component
 const Conversion = () => (
-  <div>
-    currencies
+  <div className="conversion">
+    <div className="conversion__value">1.09</div>
+    <div className="conversion__currency">USD</div>
   </div>
 );
 
