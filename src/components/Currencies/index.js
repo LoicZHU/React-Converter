@@ -20,10 +20,12 @@ const Currencies = ({ currenciesList }) => (
 
 // props validation
 Currencies.propTypes = {
-  currenciesList: PropTypes.arrayOf({
-    name: PropTypes.string.isRequired,
-    rate: PropTypes.number.isRequired,
-  }).isRequired,
+  currenciesList: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      rate: PropTypes.number.isRequired,
+    }).isRequired,
+  ).isRequired,
 };
 
 // export
