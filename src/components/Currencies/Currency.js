@@ -3,8 +3,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // component
-const Currency = ({ name }) => (
-  <li className="currency">
+const Currency = ({ name, rate, setConversion }) => (
+  <li
+    className="currency"
+    onClick={() => setConversion(name, rate)}
+  >
     {name}
   </li>
 );
@@ -12,6 +15,8 @@ const Currency = ({ name }) => (
 // props validation
 Currency.propTypes = {
   name: PropTypes.string.isRequired,
+  rate: PropTypes.number.isRequired,
+  setConversion: PropTypes.func.isRequired,
 };
 
 // export

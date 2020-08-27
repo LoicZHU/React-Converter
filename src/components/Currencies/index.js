@@ -7,12 +7,16 @@ import './currencies.scss';
 import Currency from './Currency';
 
 // component
-const Currencies = ({ currenciesList }) => (
+const Currencies = ({ currenciesList, setConversion }) => (
   <div className="currencies">
     <h2 className="currencies__title">Currencies</h2>
     <ul>
       {currenciesList.map((currency) => (
-        <Currency key={currency.name} {...currency} />
+        <Currency
+          key={currency.name}
+          {...currency}
+          setConversion={setConversion}
+        />
       ))}
     </ul>
   </div>
@@ -26,6 +30,7 @@ Currencies.propTypes = {
       rate: PropTypes.number.isRequired,
     }).isRequired,
   ).isRequired,
+  setConversion: PropTypes.func.isRequired,
 };
 
 // export
