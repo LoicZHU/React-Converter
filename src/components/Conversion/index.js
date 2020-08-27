@@ -6,16 +6,16 @@ import PropTypes from 'prop-types';
 import './conversion.scss';
 
 // component
-const Conversion = ({ conversionAmount, conversionCurrencyName }) => (
+const Conversion = ({ convertedAmount, conversionCurrencyName }) => (
   <div className="conversion">
-    <div className="conversion__value">{conversionAmount}</div>
+    <div className="conversion__value">{convertedAmount}</div>
     <div className="conversion__currency">{conversionCurrencyName}</div>
   </div>
 );
 
 // props validation
 Conversion.propTypes = {
-  conversionAmount: PropTypes.number.isRequired,
+  convertedAmount: PropTypes.number.isRequired,
   conversionCurrencyName: PropTypes.string.isRequired,
 };
 

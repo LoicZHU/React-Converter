@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 // == Import npm
 import React from 'react';
 
@@ -14,7 +15,7 @@ class App extends React.Component {
   state = {
     initialAmount: 1,
     conversion: {
-      conversionAmount: Number(currenciesList[1].rate.toFixed(2)),
+      conversionRate: Number(currenciesList[1].rate.toFixed(2)),
       conversionCurrencyName: currenciesList[1].name,
     },
   };
@@ -23,7 +24,7 @@ class App extends React.Component {
   setConversion = (selectedCurrencyName, rate) => {
     this.setState({
       conversion: {
-        conversionAmount: this.convertAmount(rate),
+        conversionRate: rate,
         conversionCurrencyName: selectedCurrencyName,
       },
     });
@@ -36,21 +37,27 @@ class App extends React.Component {
     return Number(result);
   }
 
+  handleChangeAmount = (newAmount) => {
+    this.setState({
+      initialAmount: Number(newAmount),
+    });
+  }
+
   // render
   render() {
     const { initialAmount } = this.state;
-    // eslint-disable-next-line react/destructuring-assignment
-    const { conversionAmount, conversionCurrencyName } = this.state.conversion;
+    const { conversionRate, conversionCurrencyName } = this.state.conversion;
+    const convertedAmount = this.convertAmount(conversionRate);
 
     return (
       <div className="app">
-        <Converter initialAmount={initialAmount} />
+        <Converter initialAmount={initialAmount} handleChangeAmount={this.handleChangeAmount} />
         <Currencies
           currenciesList={currenciesList}
           setConversion={this.setConversion}
         />
         <Conversion
-          conversionAmount={conversionAmount}
+          convertedAmount={convertedAmount}
           conversionCurrencyName={conversionCurrencyName}
         />
       </div>
