@@ -20,6 +20,18 @@ class App extends React.Component {
     },
   };
 
+  // lifecycle
+  componentDidMount() {
+    this.setPageTitle();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    // eslint-disable-next-line max-len
+    if (prevState.conversion.conversionCurrencyName !== this.state.conversion.conversionCurrencyName) {
+      this.setPageTitle();
+    }
+  }
+
   // functions
   setConversion = (selectedCurrencyName, rate) => {
     this.setState({
@@ -41,6 +53,10 @@ class App extends React.Component {
     this.setState({
       initialAmount: Number(newAmount),
     });
+  }
+
+  setPageTitle = () => {
+    document.title = `From Euro to ${this.state.conversion.conversionCurrencyName}`;
   }
 
   // render
