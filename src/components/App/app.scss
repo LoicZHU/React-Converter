@@ -1,6 +1,14 @@
+@import 'src/styles/_vars';
+
 .app {
   min-width: 250px;
   width: 50%;
   margin: 2rem auto;
   background-color: pink;
+}
+
+@media (max-height: 568px) {
+  .app {
+    margin: $mobileGutter auto;
+  }
 }
