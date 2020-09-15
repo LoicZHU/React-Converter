@@ -25,3 +25,9 @@
     }
   }
 }
+
+@media (max-height: 568px) {
+  .currencies {
+    max-height: 45vh;
+  }
+}
