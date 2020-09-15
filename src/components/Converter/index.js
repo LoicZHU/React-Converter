@@ -13,11 +13,10 @@ const Converter = ({ initialAmount, handleChangeAmount }) => (
     <input
       type="number"
       value={initialAmount}
-
       onChange={(event) => handleChangeAmount(event.target.value)}
     />
-    <span>
-      {(initialAmount <= 1) ? 'euro' : 'euros'}
+    <span className="header__input-currency">
+      {(initialAmount <= 1) ? ' euro' : ' euros'}
     </span>
   </header>
 );
